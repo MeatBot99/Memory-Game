@@ -1,20 +1,19 @@
-# Memory Game Project
+# Feat: A card matching game based short term memory
 
-## Table of Contents
+This is my take on the **_Udacity_** memory game. It is the second
+project for the *Front End Nanodegree* program. This is the 
+first and hopefully final commit. Feel free to check it out.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+I was going for functionality over styling. I have to make it
+work before I should even try to make it look good. It looks
+pretty good though.
 
-## Instructions
+The project is a javascript intensive learning tool. It took
+what I thought I knew about javascript and made me apply it 
+to a real thing. A humbling journey but I am happy with the
+results.
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+Dependencies:
+ -Font Awesome
+ -Animate.css
+	
