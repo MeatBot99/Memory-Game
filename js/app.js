@@ -68,6 +68,8 @@ const createDeck= function (){
     let decks= document.querySelector(".deck");
     let cards= document.createElement("li");
     let iClass= document.createElement("i");
+    let aDiv=document.createElement("div");
+    iClass.appendChild(aDiv);
     cards.appendChild(iClass);
     cards.className= "card";
     iClass.className= "fa "+ card;
@@ -80,7 +82,9 @@ const createDeck= function (){
 function, it is declared here and referenced when click event triggers.*/
 const clickEvent= function(event){
     let cardClicked= event.target;
-    showCard(cardClicked);
+    if(openCards.length<2 && !cardClicked.classList.contains("match") && cardClicked.classList.contains("card")){
+      showCard(cardClicked);
+    }
     compare(cardClicked);
 }
 
@@ -94,13 +98,16 @@ const showCard= function(cardClicked){
 class and the comparsion array is reset. If the cards do not match, they are
 returned to their starting state and the comparison array is reset.*/
 const compare= function(cardClicked){
-  if(cardClicked.classList.contains("open") && openCards.length<2){
+  if(openCards.length<=2){
 
   openCards.push(cardClicked);
 
-    if(openCards.length==2 && openCards[0].firstChild.className === openCards[1].firstChild.className){
+    if(openCards.length==2 && openCards[0].firstChild.className === openCards[1].firstChild.className &&
+    openCards[0].classList.contains("open") && openCards[1].classList.contains("open")){
       openCards[0].classList.add("match", "animated", "bounce");
       openCards[1].classList.add("match", "animated", "bounce");
+      openCards[0].classList.remove("open");
+      openCards[1].classList.remove("open");
       openCards= [];
       moves++;
       movePlus();
@@ -126,10 +133,9 @@ const compare= function(cardClicked){
       moves++;
       movePlus();
       starPopper();
+    }else if(openCards.length==2){
+      openCards= [];
     }
-  }else{
-    /*This pop method prevents a card from being clicked 3 times and becoming a "match"*/
-    openCards.pop();
   }
 }
 
