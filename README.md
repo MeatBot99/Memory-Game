@@ -17,9 +17,11 @@ When all cards are matches, you win!
 The fewer turns you take, the higher your rating will be.
 Try to earn 3 stars for maximum scoring potential!
 
-Dependencies:
+## Dependencies:
 
  -Font Awesome
  
  -Animate.css
+ 
+ -Google fonts
 	
